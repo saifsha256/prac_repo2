@@ -1,0 +1,96 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom, #1a1a2e, #3f37c9); /* Darker, more dramatic gradient */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    color: #f9f871; /* Yellowish, contrasting text */
+    overflow: hidden; /* Prevent scrollbars during animation */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+
+.bottle-container {
+    perspective: 800px; /* Increased perspective for stronger 3D effect */
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center; /* Center the bottle horizontally */
+    align-items: center;
+    width: 100%; /* Take up full width to help center */
+}
+
+.bottle {
+    max-width: 40%; /* Slightly larger bottle */
+    height: auto;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5)); /* Stronger shadow */
+    animation: float 8s infinite ease-in-out, rotate 12s infinite linear; /* Added rotation animation */
+    transform-origin: 50% 50%;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-30px); } /* Increased float height */
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg) translateY(0); }
+    100% { transform: rotate(360deg) translateY(0); }
+}
+
+
+.text-container {
+    background-color: rgba(0, 0, 0, 0.6); /* Darker background */
+    padding: 2rem;
+    border-radius: 15px; /* More rounded corners */
+    text-align: center;
+    max-width: 80%; /* Slightly wider text container */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7); /* Deeper shadow */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+}
+
+.paragraph {
+    font-size: 1.1em; /* Slightly larger text */
+    line-height: 1.7; /* Increased line height for better readability */
+    color: #ffffff; /* Brighter text color */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Added text shadow */
+}
+
+@media (max-width: 768px) {
+    .bottle {
+        max-width: 60%; /* Adjust size for smaller screens */
+    }
+    .text-container {
+        max-width: 95%;
+        padding: 1.5rem;
+    }
+    .paragraph {
+        font-size: 1em;
+        line-height: 1.6;
+    }
+}
+
+@media (max-width: 480px) {
+    .bottle {
+        max-width: 80%; /* Further adjust for very small screens */
+    }
+    .text-container {
+        padding: 1rem;
+    }
+    .paragraph {
+        font-size: 0.9em; /* Smaller text on very small screens */
+        line-height: 1.5;
+    }
+}
