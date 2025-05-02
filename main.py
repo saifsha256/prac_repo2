@@ -4,6 +4,7 @@ def main():
     
     print(add(a, b))
     print(subtrt(a, b))
+    
 
 # Making code more efficient, adding input function for entering number
 def enter_nums():
